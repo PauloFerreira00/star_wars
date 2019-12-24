@@ -1,0 +1,20 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
+
+dependencies {
+    implementation project(':data')
+    implementation project(':domain')
+    implementation project(':infrastructure')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    testImplementation "junit:junit:$junit_version"
+}
