@@ -6,7 +6,14 @@ targetCompatibility = "8"
 dependencies {
     implementation project(':domain')
 
+    implementation "com.google.code.gson:gson:$gson_version"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_logging_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_android"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$coroutines_adapter"
 
     testImplementation "junit:junit:$junit_version"
 }

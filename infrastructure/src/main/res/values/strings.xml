@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">infrastructure</string>
-    <string name="base_url"></string>
+    <string name="base_url">https://swapi.co/api/</string>
 </resources>
