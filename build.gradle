@@ -1,5 +1,13 @@
 ext {
+    gson_version = '2.8.6'
+    room_version = '2.2.3'
+    koin_version = '2.0.1'
     junit_version = '4.12'
+    moshi_version = '1.8.0'
+    retrofit_version = '2.6.2'
+    coroutines_adapter = '0.9.2'
+    coroutines_android = '1.1.1'
+    okhttp_logging_version = '3.13.1'
 }
 
 buildscript {
