@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/bottom_characters">
+
+    <fragment
+        android:id="@+id/bottom_characters"
+        android:name="com.joao.santana.starwars.features.characters.CharactersFragment"
+        android:label="CharactersFragment"
+        tools:layout="@layout/fragment_characters">
+    </fragment>
+
+    <fragment
+        android:id="@+id/bottom_star_ships"
+        android:name="com.joao.santana.starwars.features.starShips.StarShipsFragment"
+        android:label="StarShipsFragment"
+        tools:layout="@layout/fragment_star_ships">
+    </fragment>
+
+    <fragment
+        android:id="@+id/bottom_planets"
+        android:name="com.joao.santana.starwars.features.planets.PlanetsFragment"
+        android:label="PlanetsFragment"
+        tools:layout="@layout/fragment_planets">
+    </fragment>
+
+</navigation>

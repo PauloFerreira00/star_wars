@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottom_characters"
+        android:icon="@mipmap/characters_icon"
+        android:title="@string/bottom_characters_title"
+        android:checked="true"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/bottom_star_ships"
+        android:icon="@mipmap/star_ships_icon"
+        android:title="@string/bottom_star_ships_title"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/bottom_planets"
+        android:icon="@mipmap/planets_icon"
+        android:title="@string/bottom_planets_title"
+        app:showAsAction="ifRoom"/>
+
+</menu>
