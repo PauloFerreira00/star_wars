@@ -2,11 +2,11 @@ package com.joao.santana.data.models.remote
 
 import com.google.gson.annotations.SerializedName
 
-data class PeoplesResponseBody(
+data class CharactersResponseBody(
     @SerializedName(COUNT) val count: Long?,
     @SerializedName(NEXT) val next: String?,
     @SerializedName(PREVIOUS) val previous: String?,
-    @SerializedName(RESULTS) val results: List<PeopleResponseBody>?
+    @SerializedName(RESULTS) val results: List<CharacterResponseBody>?
 ) {
 
     private companion object {

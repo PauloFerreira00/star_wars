@@ -2,7 +2,7 @@ package com.joao.santana.data.models.remote
 
 import com.google.gson.annotations.SerializedName
 
-data class PeopleResponseBody(
+data class CharacterResponseBody(
     @SerializedName(NAME) val name: String?,
     @SerializedName(MASS) val mass: String?,
     @SerializedName(HEIGHT) val height: String?,

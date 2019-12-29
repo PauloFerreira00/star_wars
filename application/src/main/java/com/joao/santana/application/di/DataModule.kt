@@ -2,13 +2,13 @@ package com.joao.santana.application.di
 
 import com.joao.santana.application.di.InfrastructureModule.INTERCEPTOR_HELPER
 import com.joao.santana.application.di.InfrastructureModule.MOSHI_HELPER
-import com.joao.santana.data.mappers.PeopleResponseToPeople
-import com.joao.santana.data.mappers.PeoplesResponseToPeoples
-import com.joao.santana.data.repositories.PeopleRepositoryImpl
-import com.joao.santana.data.sources.remote.PeopleRemoteDataSource
-import com.joao.santana.data.sources.remote.PeopleRemoteDataSourceImpl
-import com.joao.santana.data.sources.remote.service.PeopleService
-import com.joao.santana.domain.repositories.PeopleRepository
+import com.joao.santana.data.mappers.CharacterResponseToCharacter
+import com.joao.santana.data.mappers.CharactersResponseToCharacters
+import com.joao.santana.data.repositories.CharacterRepositoryImpl
+import com.joao.santana.data.sources.remote.CharacterRemoteDataSource
+import com.joao.santana.data.sources.remote.CharacterRemoteDataSourceImpl
+import com.joao.santana.data.sources.remote.service.CharacterService
+import com.joao.santana.domain.repositories.CharacterRepository
 import com.joao.santana.infrastructure.builders.RetrofitBuilder
 import org.koin.android.ext.koin.androidApplication
 import org.koin.core.qualifier.named
@@ -16,29 +16,29 @@ import org.koin.dsl.module
 
 object DataModule {
 
-    private const val PEOPLE_RESPONSE_TO_PEOPLE: String = "PeopleResponseToPeople"
-    private const val PEOPLES_RESPONSE_TO_PEOPLES: String = "PeoplesResponseToPeoples"
+    private const val CHARACTER_RESPONSE_TO_CHARACTER: String = "CharacterResponseToCharacter"
+    private const val CHARACTERS_RESPONSE_TO_CHARACTERS: String = "CharactersResponseToCharacters"
 
     val mappers = module { ->
 
-        single(named(PEOPLE_RESPONSE_TO_PEOPLE)) { _ ->
-            PeopleResponseToPeople()
+        single(named(CHARACTER_RESPONSE_TO_CHARACTER)) { _ ->
+            CharacterResponseToCharacter()
         }
 
-        single(named(PEOPLES_RESPONSE_TO_PEOPLES)) { _ ->
-            PeoplesResponseToPeoples(
-                get(named(PEOPLE_RESPONSE_TO_PEOPLE))
+        single(named(CHARACTERS_RESPONSE_TO_CHARACTERS)) { _ ->
+            CharactersResponseToCharacters(
+                get(named(CHARACTER_RESPONSE_TO_CHARACTER))
             )
         }
 
     }
 
-    private const val PEOPLE_SERVICE: String = "PeopleService"
+    private const val CHARACTER_SERVICE: String = "CharacterService"
 
     val services = module { ->
 
-        single<PeopleService>(
-            named(PEOPLE_SERVICE)
+        single<CharacterService>(
+            named(CHARACTER_SERVICE)
         ) { _ ->
             RetrofitBuilder(
                 get(named(MOSHI_HELPER)),
@@ -48,31 +48,31 @@ object DataModule {
 
     }
 
-    private const val PEOPLE_REMOTE_DATA_SOURCE: String = "PeopleRemoteDataSource"
+    private const val CHARACTER_REMOTE_DATA_SOURCE: String = "CharacterRemoteDataSource"
 
     val dataSources = module { ->
 
-        single<PeopleRemoteDataSource>(
-            named(PEOPLE_REMOTE_DATA_SOURCE)
+        single<CharacterRemoteDataSource>(
+            named(CHARACTER_REMOTE_DATA_SOURCE)
         ) { _ ->
-            PeopleRemoteDataSourceImpl(
-                get(named(PEOPLE_SERVICE)),
-                get(named(PEOPLE_RESPONSE_TO_PEOPLE)),
-                get(named(PEOPLES_RESPONSE_TO_PEOPLES))
+            CharacterRemoteDataSourceImpl(
+                get(named(CHARACTER_SERVICE)),
+                get(named(CHARACTER_RESPONSE_TO_CHARACTER)),
+                get(named(CHARACTERS_RESPONSE_TO_CHARACTERS))
             )
         }
 
     }
 
-    const val PEOPLE_REPOSITORY: String = "PeopleRepository"
+    const val CHARACTER_REPOSITORY: String = "CharacterRepository"
 
     val repositories = module { ->
 
-        single<PeopleRepository>(
-            named(PEOPLE_REPOSITORY)
+        single<CharacterRepository>(
+            named(CHARACTER_REPOSITORY)
         ) { _ ->
-            PeopleRepositoryImpl(
-                get(named(PEOPLE_REMOTE_DATA_SOURCE))
+            CharacterRepositoryImpl(
+                get(named(CHARACTER_REMOTE_DATA_SOURCE))
             )
         }
 

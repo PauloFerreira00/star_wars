@@ -1,6 +1,6 @@
 package com.joao.santana.starwars.di
 
-import com.joao.santana.application.di.ApplicationModule.PEOPLE_USE_CASE
+import com.joao.santana.application.di.ApplicationModule.CHARACTER_USE_CASE
 import com.joao.santana.application.di.InfrastructureModule.NETWORK_CONNECTION_HELPER
 import com.joao.santana.starwars.features.characters.CharactersViewModel
 import com.joao.santana.starwars.features.home.HomeScreenViewModel
@@ -21,7 +21,7 @@ object AppModules {
         viewModel { _ ->
             CharactersViewModel(
                 get(named(NETWORK_CONNECTION_HELPER)),
-                get(named(PEOPLE_USE_CASE))
+                get(named(CHARACTER_USE_CASE))
             )
         }
 

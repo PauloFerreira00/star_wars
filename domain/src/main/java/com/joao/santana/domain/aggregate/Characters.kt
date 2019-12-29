@@ -1,10 +1,10 @@
 package com.joao.santana.domain.aggregate
 
-import com.joao.santana.domain.entities.People
+import com.joao.santana.domain.entities.Character
 
-data class Peoples(
+data class Characters(
     val count: Long?,
     val next: String?,
     val previous: String?,
-    val peoples: List<People>?
+    val characters: List<Character>?
 )

@@ -1,16 +1,11 @@
 package com.joao.santana.starwars.features.base
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.joao.santana.starwars.extensions.bind
 import org.koin.core.KoinComponent
 
-abstract class BaseFragment(
-    private val layoutId: Int
-) : Fragment(), KoinComponent {
+abstract class BaseFragment : Fragment(), KoinComponent {
 
     abstract val viewModel: BaseViewModel
 
@@ -19,14 +14,6 @@ abstract class BaseFragment(
 
         lifecycle.addObserver(viewModel)
         subscribeUI()
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(layoutId, container, false)
     }
 
     private fun subscribeUI() {

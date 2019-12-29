@@ -1,4 +1,4 @@
-package com.joao.santana.starwars.features.starShips
+package com.joao.santana.starwars.features.starships
 
 import android.os.Bundle
 import android.view.LayoutInflater

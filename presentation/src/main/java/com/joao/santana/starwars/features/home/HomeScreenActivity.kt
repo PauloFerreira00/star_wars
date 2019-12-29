@@ -8,6 +8,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.joao.santana.starwars.R
 import com.joao.santana.starwars.databinding.ActivityHomeScreenBinding
+import com.joao.santana.starwars.extensions.setupToolbar
 import com.joao.santana.starwars.features.base.BaseActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -23,6 +24,8 @@ class HomeScreenActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home_screen)
+
+        setupToolbar(binding.toolbar, false, getString(R.string.app_name))
 
         setNavigationController()
     }

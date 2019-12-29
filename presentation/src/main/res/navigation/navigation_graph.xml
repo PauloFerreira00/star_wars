@@ -14,7 +14,7 @@
 
     <fragment
         android:id="@+id/bottom_star_ships"
-        android:name="com.joao.santana.starwars.features.starShips.StarShipsFragment"
+        android:name="com.joao.santana.starwars.features.starships.StarShipsFragment"
         android:label="StarShipsFragment"
         tools:layout="@layout/fragment_star_ships">
     </fragment>
