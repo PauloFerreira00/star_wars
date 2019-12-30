@@ -51,6 +51,6 @@ class CharactersFragment : BaseFragment() {
     }
 
     private fun onGetCharacters(characters: Characters) {
-        characters.characters?.let { adapter.submitList(it) }
+        characters.results?.let { adapter.submitList(it) }
     }
 }
